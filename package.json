@@ -1,0 +1,14 @@
+{
+  "name": "google-detected-text-canvas",
+  "version": "1.0.0",
+  "description": "gaoey",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm main.js"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "fast-csv": "^4.3.2"
+  }
+}
