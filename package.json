@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r esm main.js"
+    "start": "browserify draw.js -o bundle.js && node -r esm app.js",
+    "build": "browserify draw.js -o bundle.js"
   },
   "dependencies": {
     "esm": "^3.2.25",
-    "fast-csv": "^4.3.2"
+    "express": "^4.17.1",
+    "fast-csv": "^4.3.2",
+    "ramda": "^0.27.1"
   }
 }

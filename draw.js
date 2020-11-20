@@ -2,7 +2,8 @@ const width = 504
 const height = 792
 const calx = (x) => width * x
 const caly = (y) => height * y
-const drawline = (ctx, arr, log = "", color) => {
+
+const drawlineFromVertices = (ctx, arr, log = "", color) => {
   console.log({ log })
   ctx.strokeStyle = color;
   arr.forEach((c, i) => {
@@ -24,14 +25,14 @@ const drawline = (ctx, arr, log = "", color) => {
   })
 }
 
-function main() {
+const draw = () => {
+  // setup
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
   ctx.fillStyle = "grey";
   ctx.fillRect(0, 0, width, height);
 
   // draw vertices
-  // set up
   const paragraph1 = {
     normalizedVertices: [
       {
@@ -53,7 +54,7 @@ function main() {
     ]
   }
   const p1 = paragraph1.normalizedVertices
-  drawline(ctx, p1, "paragraph 1", "red")
+  drawlineFromVertices(ctx, p1, "paragraph 1", "red")
 
   const paragraph2 = {
     normalizedVertices: [
@@ -76,7 +77,7 @@ function main() {
     ]
   }
   const p2 = paragraph2.normalizedVertices
-  drawline(ctx, p2, "paragraph 2", "blue")
+  drawlineFromVertices(ctx, p2, "paragraph 2", "blue")
 
   const paragraph3 = {
     normalizedVertices: [
@@ -99,7 +100,7 @@ function main() {
     ]
   }
   const p3 = paragraph3.normalizedVertices
-  drawline(ctx, p3, "paragraph 3", "yellow")
+  drawlineFromVertices(ctx, p3, "paragraph 3", "yellow")
 }
 
-main()
+draw()
